@@ -167,7 +167,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-start p-4 font-sans">
       <header className="w-full max-w-7xl mb-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-cyan-400 text-center tracking-wider">
+        <h1 className="text-3.1xl md:text-4xl font-bold text-cyan-400 text-center tracking-wider">
           Sorting Algorithm Visualizer
         </h1>
       </header>
