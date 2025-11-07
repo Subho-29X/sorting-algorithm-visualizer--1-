@@ -127,6 +127,13 @@ const App: React.FC = () => {
     }, bars.length * delay + 500);
     timeoutIdsRef.current.push(finalTimeout);
   };
+  // const refresh = setTimeout(() => {
+  //     setIsSorting(false);
+  //     setIsSorted(true);
+  //     timeoutIdsRef.current = [];
+  //   }, bars.length * delay + 500);
+  //   timeoutIdsRef.current.push(finalTimeout);
+  // };
 
   const startSorting = () => {
     if (isSorting) return;
