@@ -1,5 +1,7 @@
 export type Algorithm = 'Bubble Sort' | 'Selection Sort' | 'Insertion Sort' | 'Merge Sort' | 'Quick Sort';
 
+export type Theme = 'light' | 'dark';
+
 export interface Bar {
     value: number;
     color: string;

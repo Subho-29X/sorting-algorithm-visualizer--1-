@@ -1,32 +1,67 @@
 
 import React from 'react';
 import type { Algorithm } from '../types';
-import { ALGORITHMS } from '../constants';
+import { ALGORITHMS, THEME_COLORS } from '../constants';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface ComplexityInfoProps {
     algorithm: Algorithm;
 }
 
 export const ComplexityInfo: React.FC<ComplexityInfoProps> = ({ algorithm }) => {
+    const { theme } = useTheme();
+    const themeColors = THEME_COLORS[theme];
     const details = ALGORITHMS.find(alg => alg.name === algorithm);
 
     if (!details) return null;
 
     return (
-        <div className="w-full max-w-7xl bg-slate-800 p-4 rounded-lg shadow-lg mt-4 animate-fade-in">
-            <h2 className="text-xl font-bold text-cyan-400 mb-3 text-center">{details.name} - Time Complexity</h2>
+        <div 
+            className="w-full max-w-7xl p-4 rounded-lg shadow-lg mt-4 animate-fade-in transition-colors duration-300"
+            style={{ backgroundColor: themeColors.card }}
+        >
+            <h2 
+                className="text-xl font-bold mb-3 text-center"
+                style={{ color: themeColors.heading }}
+            >
+                {details.name} - Time Complexity
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                <div className="bg-slate-700 p-3 rounded-md">
+                <div 
+                    className="p-3 rounded-md transition-colors duration-300"
+                    style={{ backgroundColor: theme === 'dark' ? '#334155' : '#e2e8f0' }}
+                >
                     <h3 className="text-lg font-semibold text-green-400">Best Case</h3>
-                    <p className="font-mono text-lg">{details.complexity.best}</p>
+                    <p 
+                        className="font-mono text-lg"
+                        style={{ color: themeColors.text }}
+                    >
+                        {details.complexity.best}
+                    </p>
                 </div>
-                <div className="bg-slate-700 p-3 rounded-md">
+                <div 
+                    className="p-3 rounded-md transition-colors duration-300"
+                    style={{ backgroundColor: theme === 'dark' ? '#334155' : '#e2e8f0' }}
+                >
                     <h3 className="text-lg font-semibold text-yellow-400">Average Case</h3>
-                    <p className="font-mono text-lg">{details.complexity.average}</p>
+                    <p 
+                        className="font-mono text-lg"
+                        style={{ color: themeColors.text }}
+                    >
+                        {details.complexity.average}
+                    </p>
                 </div>
-                <div className="bg-slate-700 p-3 rounded-md">
+                <div 
+                    className="p-3 rounded-md transition-colors duration-300"
+                    style={{ backgroundColor: theme === 'dark' ? '#334155' : '#e2e8f0' }}
+                >
                     <h3 className="text-lg font-semibold text-red-400">Worst Case</h3>
-                    <p className="font-mono text-lg">{details.complexity.worst}</p>
+                    <p 
+                        className="font-mono text-lg"
+                        style={{ color: themeColors.text }}
+                    >
+                        {details.complexity.worst}
+                    </p>
                 </div>
             </div>
             <style jsx>{`

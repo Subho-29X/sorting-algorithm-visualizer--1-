@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Controls } from "./components/Controls";
 import { Visualizer } from "./components/Visualizer";
 import { ComplexityInfo } from "./components/ComplexityInfo";
+import { ThemeToggle } from "./components/ThemeToggle";
+import { useTheme } from "./contexts/ThemeContext";
 import { generateBubbleSortAnimations } from "./services/sortingService";
 import { generateSelectionSortAnimations } from "./services/sortingService";
 import { generateInsertionSortAnimations } from "./services/sortingService";
@@ -15,9 +17,13 @@ import {
   SWAP_COLOR,
   SORTED_COLOR,
   BASE_ANIMATION_SPEED_MS,
+  THEME_COLORS,
 } from "./constants";
 
 const App: React.FC = () => {
+  const { theme } = useTheme();
+  const themeColors = THEME_COLORS[theme];
+  
   const [arraySize, setArraySize] = useState<number>(50);
   const [bars, setBars] = useState<Bar[]>([]);
   const [selectedAlgorithm, setSelectedAlgorithm] =
@@ -172,9 +178,18 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-start p-4 font-sans">
-      <header className="w-full max-w-7xl mb-4">
-        <h1 className="text-3.1xl md:text-4xl font-bold text-cyan-400 text-center tracking-wider">
+    <div 
+      className="min-h-screen flex flex-col items-center justify-start p-4 font-sans transition-colors duration-300"
+      style={{ backgroundColor: themeColors.background }}
+    >
+      <header className="w-full max-w-7xl mb-4 relative">
+        <div className="absolute right-0 top-0">
+          <ThemeToggle />
+        </div>
+        <h1 
+          className="text-3xl md:text-4xl font-bold text-center tracking-wider"
+          style={{ color: themeColors.heading }}
+        >
           Sorting Algorithm Visualizer
         </h1>
       </header>
