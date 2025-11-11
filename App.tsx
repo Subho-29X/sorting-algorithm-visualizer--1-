@@ -23,7 +23,7 @@ import {
 const App: React.FC = () => {
   const { theme } = useTheme();
   const themeColors = THEME_COLORS[theme];
-  
+
   const [arraySize, setArraySize] = useState<number>(50);
   const [bars, setBars] = useState<Bar[]>([]);
   const [selectedAlgorithm, setSelectedAlgorithm] =
@@ -178,7 +178,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div 
+    <div
       className="min-h-screen flex flex-col items-center justify-start p-4 font-sans transition-colors duration-300"
       style={{ backgroundColor: themeColors.background }}
     >
@@ -186,7 +186,7 @@ const App: React.FC = () => {
         <div className="absolute right-0 top-0">
           <ThemeToggle />
         </div>
-        <h1 
+        <h1
           className="text-3xl md:text-4xl font-bold text-center tracking-wider"
           style={{ color: themeColors.heading }}
         >

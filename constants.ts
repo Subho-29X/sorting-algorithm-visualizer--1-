@@ -9,20 +9,20 @@ export const SORTED_COLOR = "#4ade80"; // green-400
 
 export const THEME_COLORS = {
   light: {
-    background: '#f1f5f9', // slate-100
-    card: '#ffffff',
-    text: '#1e293b', // slate-800
-    textSecondary: '#475569', // slate-600
-    border: '#cbd5e1', // slate-300
-    heading: '#0ea5e9', // sky-500
+    background: "#f1f5f9", // slate-100
+    card: "#ffffff",
+    text: "#1e293b", // slate-800
+    textSecondary: "#475569", // slate-600
+    border: "#cbd5e1", // slate-300
+    heading: "#0ea5e9", // sky-500
   },
   dark: {
-    background: '#0f172a', // slate-900
-    card: '#1e293b', // slate-800
-    text: '#f1f5f9', // slate-100
-    textSecondary: '#cbd5e1', // slate-300
-    border: '#334155', // slate-700
-    heading: '#22d3ee', // cyan-400
+    background: "#0f172a", // slate-900
+    card: "#1e293b", // slate-800
+    text: "#f1f5f9", // slate-100
+    textSecondary: "#cbd5e1", // slate-300
+    border: "#334155", // slate-700
+    heading: "#22d3ee", // cyan-400
   },
 };
 

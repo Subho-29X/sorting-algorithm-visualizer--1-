@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import React from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -9,12 +9,12 @@ export const ThemeToggle: React.FC = () => {
       onClick={toggleTheme}
       className="p-2 rounded-lg transition-all duration-200 hover:scale-110"
       style={{
-        backgroundColor: theme === 'light' ? '#e2e8f0' : '#334155',
-        color: theme === 'light' ? '#1e293b' : '#f1f5f9',
+        backgroundColor: theme === "light" ? "#e2e8f0" : "#334155",
+        color: theme === "light" ? "#1e293b" : "#f1f5f9",
       }}
       aria-label="Toggle theme"
     >
-      {theme === 'light' ? (
+      {theme === "light" ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
