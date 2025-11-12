@@ -9,10 +9,11 @@ export const ThemeToggle: React.FC = () => {
       onClick={toggleTheme}
       className="p-2 rounded-lg transition-all duration-200 hover:scale-110"
       style={{
-        backgroundColor: theme === "light" ? "#e2e8f0" : "#334155",
-        color: theme === "light" ? "#1e293b" : "#f1f5f9",
+        backgroundColor: theme === 'light' ? '#e2e8f0' : '#334155',
+        color: theme === 'light' ? '#1e293b' : '#f1f5f9',
       }}
       aria-label="Toggle theme"
+      title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {theme === "light" ? (
         <svg
