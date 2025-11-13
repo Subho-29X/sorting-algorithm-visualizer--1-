@@ -7,6 +7,9 @@ export type Algorithm =
 
 export type Theme = "light" | "dark";
 
+/**
+ * Represents a single bar in the visualizer
+ */
 export interface Bar {
   value: number;
   color: string;
