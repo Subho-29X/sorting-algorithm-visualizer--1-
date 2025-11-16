@@ -22,6 +22,17 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "t" || e.key === "T") {
+        toggleTheme();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, []);
+
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };

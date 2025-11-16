@@ -1,5 +1,6 @@
 import type { AlgorithmDetails } from "./types";
 
+// Animation speed in milliseconds (lower = faster)
 export const BASE_ANIMATION_SPEED_MS = 15;
 
 export const DEFAULT_COLOR = "#0ea5e9"; // sky-500
