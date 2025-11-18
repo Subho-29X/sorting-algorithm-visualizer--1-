@@ -80,7 +80,7 @@ const App: React.FC = () => {
               newBars[idx1] = { ...newBars[idx1], color: COMPARE_COLOR };
             if (idx2 < newBars.length && newBars[idx2])
               newBars[idx2] = { ...newBars[idx2], color: COMPARE_COLOR };
-            setComparisonCount(prev => prev + 1);
+            setComparisonCount((prev) => prev + 1);
           } else if (type === "revert") {
             const [idx1, idx2] = indices;
             if (newBars[idx1])
@@ -210,7 +210,7 @@ const App: React.FC = () => {
       />
       <Visualizer bars={bars} />
       {(isSorting || isSorted) && (
-        <div 
+        <div
           className="mt-4 text-center text-lg font-semibold"
           style={{ color: themeColors.text }}
         >
