@@ -31,6 +31,7 @@ const App: React.FC = () => {
   const [isSorting, setIsSorting] = useState<boolean>(false);
   const [isSorted, setIsSorted] = useState<boolean>(false);
   const [speed, setSpeed] = useState<number>(1);
+  const [comparisonCount, setComparisonCount] = useState<number>(0);
   // Fix: Changed NodeJS.Timeout to number for browser compatibility.
   const timeoutIdsRef = useRef<number[]>([]);
 
@@ -79,6 +80,7 @@ const App: React.FC = () => {
               newBars[idx1] = { ...newBars[idx1], color: COMPARE_COLOR };
             if (idx2 < newBars.length && newBars[idx2])
               newBars[idx2] = { ...newBars[idx2], color: COMPARE_COLOR };
+            setComparisonCount(prev => prev + 1);
           } else if (type === "revert") {
             const [idx1, idx2] = indices;
             if (newBars[idx1])
@@ -151,6 +153,7 @@ const App: React.FC = () => {
     // Reset colors before starting
     setBars(bars.map((b) => ({ ...b, color: DEFAULT_COLOR })));
     setIsSorted(false);
+    setComparisonCount(0);
 
     const arrayValues = bars.map((bar) => bar.value);
     let animations: Animation[] = [];
@@ -206,6 +209,14 @@ const App: React.FC = () => {
         onSpeedChange={setSpeed}
       />
       <Visualizer bars={bars} />
+      {(isSorting || isSorted) && (
+        <div 
+          className="mt-4 text-center text-lg font-semibold"
+          style={{ color: themeColors.text }}
+        >
+          Comparisons: {comparisonCount}
+        </div>
+      )}
       {isSorted && <ComplexityInfo algorithm={selectedAlgorithm} />}
     </div>
   );
