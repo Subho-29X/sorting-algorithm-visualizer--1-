@@ -58,6 +58,7 @@ const App: React.FC = () => {
     }
     setBars(newArray);
     setIsSorted(false);
+    setComparisonCount(0);
   }, [arraySize, stopSorting]);
 
   useEffect(() => {
