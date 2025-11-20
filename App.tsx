@@ -18,6 +18,8 @@ import {
   SORTED_COLOR,
   BASE_ANIMATION_SPEED_MS,
   THEME_COLORS,
+  MIN_ARRAY_VALUE,
+  MAX_ARRAY_VALUE,
 } from "./constants";
 
 const App: React.FC = () => {
@@ -52,7 +54,9 @@ const App: React.FC = () => {
     const newArray: Bar[] = [];
     for (let i = 0; i < arraySize; i++) {
       newArray.push({
-        value: Math.floor(Math.random() * (100 - 5 + 1)) + 5,
+        value:
+          Math.floor(Math.random() * (MAX_ARRAY_VALUE - MIN_ARRAY_VALUE + 1)) +
+          MIN_ARRAY_VALUE,
         color: DEFAULT_COLOR,
       });
     }

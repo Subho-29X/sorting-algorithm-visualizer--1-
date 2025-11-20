@@ -3,6 +3,10 @@ import type { AlgorithmDetails } from "./types";
 // Animation speed in milliseconds (lower = faster)
 export const BASE_ANIMATION_SPEED_MS = 15;
 
+// Array value constraints
+export const MIN_ARRAY_VALUE = 5;
+export const MAX_ARRAY_VALUE = 100;
+
 export const DEFAULT_COLOR = "#0ea5e9"; // sky-500
 export const COMPARE_COLOR = "#facc15"; // yellow-400
 export const SWAP_COLOR = "#f87171"; // red-400
