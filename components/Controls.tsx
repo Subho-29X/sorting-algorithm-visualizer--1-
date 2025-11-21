@@ -115,6 +115,8 @@ export const Controls: React.FC<ControlsProps> = ({
           >
             <option value={1}>1x</option>
             <option value={1.5}>1.5x</option>
+            <option value={2}>2x</option>
+            <option value={3}>3x</option>
           </select>
         </div>
       </div>
