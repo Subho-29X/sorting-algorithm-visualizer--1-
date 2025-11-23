@@ -130,6 +130,7 @@ export const Controls: React.FC<ControlsProps> = ({
             backgroundColor: theme === "dark" ? "#475569" : "#94a3b8",
             opacity: isSorting ? 0.5 : 1,
           }}
+          title="Generate new random array"
         >
           Reset
         </button>
@@ -140,6 +141,9 @@ export const Controls: React.FC<ControlsProps> = ({
               ? "bg-red-600 hover:bg-red-500"
               : "bg-cyan-600 hover:bg-cyan-500"
           }`}
+          title={
+            isSorting ? "Stop sorting animation" : "Start sorting animation"
+          }
         >
           {isSorting ? "Stop" : "Start"}
         </button>
