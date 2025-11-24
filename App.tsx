@@ -194,12 +194,18 @@ const App: React.FC = () => {
         <div className="absolute right-0 top-0">
           <ThemeToggle />
         </div>
-        <h1
+        <h1 
           className="text-3xl md:text-4xl font-bold text-center tracking-wider"
           style={{ color: themeColors.heading }}
         >
           Sorting Algorithm Visualizer
         </h1>
+        <p
+          className="mt-2 text-center text-sm"
+          style={{ color: themeColors.textSecondary }}
+        >
+          Tip: Press <span className="font-mono">T</span> to toggle theme
+        </p>
       </header>
       <Controls
         arraySize={arraySize}
