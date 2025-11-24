@@ -194,7 +194,7 @@ const App: React.FC = () => {
         <div className="absolute right-0 top-0">
           <ThemeToggle />
         </div>
-        <h1 
+        <h1
           className="text-3xl md:text-4xl font-bold text-center tracking-wider"
           style={{ color: themeColors.heading }}
         >
