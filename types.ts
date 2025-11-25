@@ -29,4 +29,5 @@ export interface AlgorithmDetails {
     average: string;
     worst: string;
   };
+  description?: string;
 }

@@ -39,6 +39,8 @@ export const ALGORITHMS: AlgorithmDetails[] = [
       average: "O(n²)",
       worst: "O(n²)",
     },
+    description:
+      "Simple comparison-based algorithm that repeatedly swaps adjacent elements if they're in wrong order.",
   },
   {
     name: "Selection Sort",
@@ -47,6 +49,8 @@ export const ALGORITHMS: AlgorithmDetails[] = [
       average: "O(n²)",
       worst: "O(n²)",
     },
+    description:
+      "Divides array into sorted and unsorted sections, repeatedly selecting the minimum element.",
   },
   {
     name: "Insertion Sort",
@@ -55,6 +59,8 @@ export const ALGORITHMS: AlgorithmDetails[] = [
       average: "O(n²)",
       worst: "O(n²)",
     },
+    description:
+      "Builds sorted array one item at a time by inserting each element into its proper position.",
   },
   {
     name: "Merge Sort",
@@ -63,6 +69,8 @@ export const ALGORITHMS: AlgorithmDetails[] = [
       average: "O(n log n)",
       worst: "O(n log n)",
     },
+    description:
+      "Divide-and-conquer algorithm that splits array into halves, sorts them, and merges back.",
   },
   {
     name: "Quick Sort",
@@ -71,6 +79,8 @@ export const ALGORITHMS: AlgorithmDetails[] = [
       average: "O(n log n)",
       worst: "O(n²)",
     },
+    description:
+      "Efficient divide-and-conquer algorithm using a pivot to partition the array.",
   },
   {
     name: "Merge Sort",

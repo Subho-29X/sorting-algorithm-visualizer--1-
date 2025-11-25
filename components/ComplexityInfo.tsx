@@ -27,6 +27,14 @@ export const ComplexityInfo: React.FC<ComplexityInfoProps> = ({
       >
         {details.name} - Time Complexity
       </h2>
+      {details.description && (
+        <p
+          className="text-center mb-4 text-sm italic"
+          style={{ color: themeColors.textSecondary }}
+        >
+          {details.description}
+        </p>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
         <div
           className="p-3 rounded-md transition-colors duration-300"
