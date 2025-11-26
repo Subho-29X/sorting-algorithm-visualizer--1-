@@ -34,6 +34,7 @@ const App: React.FC = () => {
   const [isSorted, setIsSorted] = useState<boolean>(false);
   const [speed, setSpeed] = useState<number>(1);
   const [comparisonCount, setComparisonCount] = useState<number>(0);
+  const [swapCount, setSwapCount] = useState<number>(0);
   // Fix: Changed NodeJS.Timeout to number for browser compatibility.
   const timeoutIdsRef = useRef<number[]>([]);
 
@@ -63,6 +64,7 @@ const App: React.FC = () => {
     setBars(newArray);
     setIsSorted(false);
     setComparisonCount(0);
+    setSwapCount(0);
   }, [arraySize, stopSorting]);
 
   useEffect(() => {
@@ -99,6 +101,7 @@ const App: React.FC = () => {
               newBars[idx1] = { value: val1, color: SWAP_COLOR };
             if (newBars[idx2])
               newBars[idx2] = { value: val2, color: SWAP_COLOR };
+            setSwapCount((prev) => prev + 1);
           } else if (type === "overwrite") {
             const [idx] = indices;
             const [val] = values!;
@@ -159,6 +162,7 @@ const App: React.FC = () => {
     setBars(bars.map((b) => ({ ...b, color: DEFAULT_COLOR })));
     setIsSorted(false);
     setComparisonCount(0);
+    setSwapCount(0);
 
     const arrayValues = bars.map((bar) => bar.value);
     let animations: Animation[] = [];
@@ -225,7 +229,7 @@ const App: React.FC = () => {
           className="mt-4 text-center text-lg font-semibold"
           style={{ color: themeColors.text }}
         >
-          Comparisons: {comparisonCount}
+          Comparisons: {comparisonCount} | Swaps: {swapCount}
         </div>
       )}
       {isSorted && <ComplexityInfo algorithm={selectedAlgorithm} />}
