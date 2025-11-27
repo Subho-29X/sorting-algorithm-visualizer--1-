@@ -7,9 +7,14 @@ interface VisualizerProps {
 
 export const Visualizer: React.FC<VisualizerProps> = ({ bars }) => {
   const barWidth = 100 / bars.length;
+  const maxValue = Math.max(...bars.map((b) => b.value));
+  const minValue = Math.min(...bars.map((b) => b.value));
 
   return (
-    <div className="w-full max-w-7xl h-[60vh] bg-slate-800 p-4 rounded-lg shadow-inner flex items-end justify-start gap-[1px]">
+    <div className="w-full max-w-7xl h-[60vh] bg-slate-800 p-4 rounded-lg shadow-inner flex items-end justify-start gap-[1px] relative">
+      <div className="absolute top-2 left-4 text-slate-400 text-sm">
+        Min: {minValue} | Max: {maxValue}
+      </div>
       {bars.map((bar, index) => (
         <div
           key={index}
