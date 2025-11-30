@@ -35,8 +35,10 @@ const App: React.FC = () => {
   const [speed, setSpeed] = useState<number>(1);
   const [comparisonCount, setComparisonCount] = useState<number>(0);
   const [swapCount, setSwapCount] = useState<number>(0);
+  const [elapsedTime, setElapsedTime] = useState<number>(0);
   // Fix: Changed NodeJS.Timeout to number for browser compatibility.
   const timeoutIdsRef = useRef<number[]>([]);
+  const startTimeRef = useRef<number>(0);
 
   const stopSorting = useCallback(() => {
     timeoutIdsRef.current.forEach(clearTimeout);
@@ -137,6 +139,9 @@ const App: React.FC = () => {
     });
 
     const finalTimeout = setTimeout(() => {
+      const endTime = Date.now();
+      const elapsed = ((endTime - startTimeRef.current) / 1000).toFixed(2);
+      setElapsedTime(parseFloat(elapsed));
       setIsSorting(false);
       setIsSorted(true);
       timeoutIdsRef.current = [];
@@ -163,6 +168,8 @@ const App: React.FC = () => {
     setIsSorted(false);
     setComparisonCount(0);
     setSwapCount(0);
+    setElapsedTime(0);
+    startTimeRef.current = Date.now();
 
     const arrayValues = bars.map((bar) => bar.value);
     let animations: Animation[] = [];
@@ -230,6 +237,7 @@ const App: React.FC = () => {
           style={{ color: themeColors.text }}
         >
           Comparisons: {comparisonCount} | Swaps: {swapCount}
+          {isSorted && elapsedTime > 0 && ` | Time: ${elapsedTime}s`}
         </div>
       )}
       {isSorted && <ComplexityInfo algorithm={selectedAlgorithm} />}
