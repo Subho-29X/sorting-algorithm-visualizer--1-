@@ -11,6 +11,7 @@ export const DEFAULT_COLOR = "#0ea5e9"; // sky-500
 export const COMPARE_COLOR = "#facc15"; // yellow-400
 export const SWAP_COLOR = "#f87171"; // red-400
 export const SORTED_COLOR = "#4ade80"; // green-400
+export const PIVOT_COLOR = "#a78bfa"; // violet-400
 
 export const THEME_COLORS = {
   light: {
