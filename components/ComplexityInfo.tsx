@@ -66,6 +66,11 @@ export const ComplexityInfo: React.FC<ComplexityInfoProps> = ({
           </p>
         </div>
       </div>
+      <div className="mt-4 text-center">
+        <p className="text-xs" style={{ color: themeColors.textSecondary }}>
+          Space Complexity: O(1) for in-place algorithms
+        </p>
+      </div>
       <style jsx>{`
         @keyframes fadeIn {
           from {
